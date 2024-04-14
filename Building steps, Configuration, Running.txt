@@ -1,0 +1,6 @@
+Building steps and Configurations and Running:
+Aici inteleg ca trebuie sa prezint codul:
+Folosesc biblitoeca SoftwareSerial pentru a crea mySerial ce reprezinta cei doi pini setati(2,3) ce comunica cu modulul sim.
+Setez cei doi pini(6 si 7) pentru relee pe HIGH  si configurez modulul sim pentru a recepta mesaje text.
+In loop se asteapta primirea unui mesaj pe unul din cele doua Seriale si se scrie in cazul Serialului build in, iar in cazul mySerial se transforma mesajul in 
+string si verificam daca e "On" setam pe Low pentru o secunda releu 1, iar daca e "Off" setam pe Low pentru o secunda releul 2.

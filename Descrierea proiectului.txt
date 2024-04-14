@@ -1,0 +1,6 @@
+Proiectul foloseste un modul gsm/sim ce primeste un mesaj sms de tipul On sau Off ce este interceptat de arduino si actioneaza modulul de relee.
+Daca mesajul este de tip On se va actiona releul 1, iar daca mesajul este de tip Off se va actiona releul 2.
+Circuitul de test pus la releu este cu o baterie de 9v si bec,
+ dar in mod normal se va conecta la butonul de inchidere/deschidere al masinii.Am testat si functioneaza, nu am mai filmat pe masina.
+
+Prezentarea componentelor si a firelor cu culori ales conform standardelor este facuta in video.

@@ -1,0 +1,16 @@
+Hardware components:
+
+1 arduino uno https://docs.arduino.cc/hardware/uno-rev3/ 
+2 capacitor 4700uF 10v https://en.wikipedia.org/wiki/Capacitor
+1 modul GPRS GSM sim800L 2.0 https://ultra-lab.net/wp-content/uploads/2022/02/Ficha-tecnica-de-SIM800L-V2.0.pdf
+1 modul releu cu 4 canale de 5v https://www.triticom.ro/modul-releu-5v-4-canale
+1 baterie 9v
+1 led rosu
+1 rezistenta 1K https://ro.wikipedia.org/wiki/Rezisten%C8%9B%C4%83_electric%C4%83
+set de fire 
+
+
+Software Components:
+Codul este construit folosind Arduino IDE si scrie pe Serial rezultatele primite de la modulul sim 
+Biblioteca SoftwareSerial folosita pentru comunicarea cu modulul sim  https://docs.arduino.cc/learn/built-in-libraries/software-serial/
+
