@@ -1,0 +1,60 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(2, 3); // RX, TX
+
+const int rel1 = 6; // Pinul la care este conectat releu de deschidere
+const int rel2 = 7; // Pinul la care este conectat releul de inchidere
+
+
+void setup() {
+  pinMode(rel1, OUTPUT);
+  pinMode(rel2, OUTPUT);
+
+  Serial.begin(9600);
+  Serial.println("Starting ...");
+
+  // Setarea vitezei de transmisie pentru modulul SIM800L
+  mySerial.begin(9600);
+
+  // Așteptăm până când modulul este gata
+  delay(1000);
+ digitalWrite(rel1, HIGH);
+  digitalWrite(rel2, HIGH);
+  // Inițializăm modulul SIM800L
+  mySerial.println("AT");
+      
+  delay(1000);
+  mySerial.println("AT+CMGF=1"); // Setăm modul SMS la text
+  delay(200);
+  mySerial.println("AT+CNMI=1,2,0,0,0"); 
+       
+  delay(1000);
+}
+
+void loop() {
+  
+  if(Serial.available()){
+    mySerial.println(Serial.read());  
+  }
+
+  if (mySerial.available()) {
+   // Serial.println("Available");
+    
+     String incoming = mySerial.readString();
+     Serial.print(incoming);
+
+  //   Verificăm dacă mesajul primit este "ON" sau "OFF"
+     if (incoming.indexOf("On") != -1) {
+       digitalWrite(rel1, LOW); 
+       delay(1000);
+       digitalWrite(rel1, HIGH); 
+     } else if (incoming.indexOf("Off") != -1) {
+             digitalWrite(rel2, LOW);
+             delay(1000);
+             digitalWrite(rel2, HIGH); 
+     }
+   }
+
+  }
+
+
